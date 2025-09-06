@@ -7,17 +7,47 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--
+        This script makes the background image move when you move your mouse.
+        It works by changing the background position based on your cursor location.
+    -->
+    <script>
+            document.addEventListener('mousemove', function(e) {
+                // Get the width and height of the window
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                // Calculate how far the mouse is from the center
+                var centerX = w / 2;
+                var centerY = h / 2;
+                var offsetX = (e.clientX - centerX) / centerX; // -1 to 1
+                var offsetY = (e.clientY - centerY) / centerY; // -1 to 1
+                // Amplify the movement for a more dramatic effect
+                var moveX = 50 + offsetX * 30; // 50% is center, move up to +/-30%
+                var moveY = 50 + offsetY * 30; // 50% is center, move up to +/-30%
+                // Set the background position using these values
+                document.body.style.backgroundPosition = moveX + '% ' + moveY + '%';
+            });
+    </script>
+        <!-- Top bar with headline -->
+    <div class="top-bar" style="background-color: #77A8BB; padding: 10px; text-align: center;">
+            <div class="top-bar-content">
+                <!-- Water can image to the left of the title -->
+                <img src="img/water-can-transparent.png" alt="Water Can" class="top-bar-logo">
+                <span class="top-bar-headline">Charity: Water</span>
+                <div class="top-bar-links">
+                    <a href="#" class="top-bar-link">Donate</a>
+                    <a href="#" class="top-bar-link">About Us</a>
+                    <a href="#" class="top-bar-link">Sign In</a>
+                    <a href="#" class="top-bar-link top-bar-link-disabled" tabindex="-1" aria-disabled="true" style="pointer-events: none;">Padding</a>
+                </div>
+            </div>
+        </div>
     <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+    <!-- Removed hero section -->
 
     <!-- Story Section: This tells the story of the nonprofit -->
     <section class="story">
-        <h2>Our Story</h2>
+        <h2>It Starts With Water</h2>
         <p>
          
     </section>
@@ -25,23 +55,23 @@
     <!-- Real-World Impact Story Section -->
     <section class="impact-story">
         <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
+        <h2>Gentle, Everyday Shift</h2>
         <!-- Container for image and text -->
         <div class="impact-content">
             <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
+            <img src="img/eyJidWNrZXQiOiJkcm9wbWFyayIsImtleSI6IjUyMDQzLzc1NTk5NmViZTA1ZGRiZTA2ODdjOGJjNDU2NWFjZWJkMmU2N2VhMzYvcHJldmlldy9Sd2FuZGEtMjAxOC1tYXJjaC1jdy1jdWJieWdyYWhhbS0xMDg4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NjAwLCJoZW.png" alt="Collecting clean water" class="impact-image">
             <!-- Impact story text -->
             <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
+                Just months ago, families here spent hours walking for water. Today, clean water flows steps from home. A mother holds her child, watching the yellow can fill, not with worry, but with relief.
             </p>
         </div>
     </section>
 
     <!-- Call-to-Action Section: This encourages visitors to take action -->
     <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
+        <h2>Fight the Water Crisis. See Your Impact</h2>
+        <p>100% of your donation funds clean, sustainable water projects, and you’ll see real proof of the change you helped create.</p>
+        <a href="#" class="donate-button">Make Your Impact</a>
     </section>
 </body>
 </html>
